@@ -19,5 +19,7 @@ from . import view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', view.hello),
+    url(r'^$', view.index),
+    url(r'add/(\d+)/(\d+)/$',view.add,name='add'),
+    url(r'add1/(\d+)/(\d+)/$', view.add1, name='add1'),
 ]
