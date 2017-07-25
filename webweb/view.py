@@ -16,7 +16,10 @@ def add(request,a,b):
 
 
 def add1(request,a, b):
-    context={"result":int(a)+int(b)}
+    context={}
+    context["result"] = "Result: "+str(int(a)+int(b))
+    context["retime"] = "Time: "+str(datetime.datetime.now())
     context["num1"] = int(random.random()*100)
     context["num2"] = int(random.random() * 100)
+    context["alink"] = "/add1/"+ str(context["num1"])+"/"+str(context["num2"])+"/"
     return render(request, 'hello.html', context)
